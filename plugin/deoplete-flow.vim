@@ -15,7 +15,9 @@ else
   if executable(local_flow)
     let g:autocomplete_flow#flowbin = local_flow
   else
-    let g:autocomplete_flow#flowbin = 'flow'
+      if executable('flow')
+        let g:autocomplete_flow#flowbin = 'flow'
+      endif
   endif
 endif
 
